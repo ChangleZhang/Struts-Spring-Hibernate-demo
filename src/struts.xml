@@ -2,10 +2,10 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<include file="struts-default.xml"/>
-	<package name="struts2_login" extends="struts-default" namespace="/login">
+	<package name="struts2_login" extends="struts-default">
 		<action name="checkLogin" class="act.LoginAction" method="checkLogin">
 			<result name="success">/index.jsp</result>
 			<result name="login">/login.jsp</result>
 		</action>
 	</package>
-</struts>    
+</struts>   
