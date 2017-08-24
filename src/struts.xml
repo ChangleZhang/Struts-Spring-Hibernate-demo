@@ -2,10 +2,21 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<include file="struts-default.xml"/>
-	<package name="struts2_login" extends="struts-default">
+	<package name="struts2_login" extends="struts-default" namespace="/login">
 		<action name="checkLogin" class="act.LoginAction" method="checkLogin">
 			<result name="success">/index.jsp</result>
 			<result name="login">/login.jsp</result>
 		</action>
 	</package>
-</struts>   
+	<package name="struts2_commit" extends="struts-default" namespace="">
+		<action name = "public1" class="tmq.action.PublicAction" method="execute">
+			<result name="success">/success.jsp</result>
+		</action>
+	</package>
+	<package name="struts2_timmer" extends="struts-default" namespace="">
+		<action name = "timmer" class="tmq.action.TimerInterceptorAction" method="execute">
+			<result name="success">/success.jsp</result>
+			<interceptor-ref name="timer"/>
+		</action>
+	</package>
+</struts>
