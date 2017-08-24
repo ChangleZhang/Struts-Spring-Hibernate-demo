@@ -1,5 +1,6 @@
 package act;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport{
@@ -24,8 +25,16 @@ public class LoginAction extends ActionSupport{
 	
 	public String checkLogin(){
 		if(this.username.equals("admin") && this.password.equals("acc"))
-			return "success";
+			return SUCCESS;
 		else
 			return "login";
+	}
+	
+	public String checkLoginUser(){
+		ActionContext ac = ActionContext.getContext();
+		ac.getSession().put("login", this.username);//吧登录名放在session中
+		ac.getApplication().put("login", this.username);//把登录名放在application中
+		
+		return SUCCESS;
 	}
 }

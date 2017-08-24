@@ -19,4 +19,9 @@
 			<interceptor-ref name="timer"/>
 		</action>
 	</package>
+	<package name="struts2_logSession" extends="struts-default" namespace="">
+		<action name = "checkLoginUser" class="act.LoginAction" method="checkLoginUser">
+			<result>/userinfo.jsp</result>
+		</action>
+	</package>
 </struts>
