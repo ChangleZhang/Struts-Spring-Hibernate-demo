@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'success.jsp' starting page</title>
+    <title>My JSP 'Tags.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -24,7 +24,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   标题：<s:property value="title"/><br>
-   内容：<s:property value="content"/><br>
+    <s:bean name="com.Person" id="p">
+    	<s:param name="name" value="'challen'"/>
+    	<s:param name="sex" value="'男'"></s:param>
+    	<s:param name ="age" value="24"></s:param>
+    </s:bean>
+    姓名：<s:property value="#p.name"/>
+    性别：<s:property value="#p.sex"/>
+    年龄：<s:property value="#p.age"/><br>
+    <s:debug/>
+    
+    <s:form>
+    	<s:combobox label="booklist" labelposition="left" size ="20" maxlength="20" name="boooks" list="{'java1','java2','java3'}"/>
+    	<s:bean name="com.BOokService" id="bs"/>
+    	<s:combobox label="booklist" name="book" labelposition="lfet" list="#bs.books" listKey="name" listValue="name"/>
+    </s:form>
+    <br>
+    <br>
+    
   </body>
 </html>
