@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'success.jsp' starting page</title>
+    <title>My JSP 'validate.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -24,11 +24,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   标题：<s:property value="title"/><br>
-   内容：<s:property value="content"/><br>
-   
-   <b>密码检验通过</b><br>
-   姓名：<s:property value ="name"/><br>
-   密码：<s:property value = "pass"/><br>
+	<s:form action="validate" method="post" namespace="/validate">
+		<s:textfield label="姓名" name="name"></s:textfield>
+		<s:textfield label="密码" name="pass"></s:textfield>
+		<s:submit value="提交"></s:submit>
+	</s:form>
   </body>
 </html>

@@ -19,9 +19,13 @@
 			<interceptor-ref name="timer"/>
 		</action>
 	</package>
-	<package name="struts2_logSession" extends="struts-default" namespace="">
+	<package name="struts2_logSession" extends="struts-default" namespace="/validate">
 		<action name = "checkLoginUser" class="act.LoginAction" method="checkLoginUser">
 			<result>/userinfo.jsp</result>
+		</action>
+		<action name= "validate" class="tmq.action.ValidateAction" method="login">
+			<result name="input">/validate.jsp</result>
+			<result name="success">/success.jsp</result>
 		</action>
 	</package>
 </struts>
