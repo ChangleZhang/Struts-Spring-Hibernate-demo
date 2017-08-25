@@ -41,6 +41,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </s:form>
     <br>
     <br>
+    <s:select label="field you interested in" name="skillsArea" list="#{'js':'js','ajax':'ajax'}">
+    	<s:optgroup label="java web" list="#{'jsp':'jsp','servlet':'servlet','javaben':'javabean' }" listKey="value" listValue="key">
+    	</s:optgroup>
+    	<s:optgroup label="java open stack" list="#{'ssh':'ssh','ssm':'ssm','hibernate':'hibernate' }" listKey="value" listValue="key">
+    	</s:optgroup>
+    </s:select>
+    <br>
+    <br>
+    <h3>使用tree和treenode标签生成静态树</h3>
     
   </body>
 </html>
