@@ -1,7 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+	<constant name="struts.i18n.encoding" value="GBK"/>
 	<include file="struts-default.xml"/>
+	<package name="users" extends="struts-default">
+		<action name="register" class="com.challen.users.action.RegisterAction" method="register">
+			<result name="success">/regsucc.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+		<action name="login" class="com.challen.users.action.LoginAction" method="login">
+			<result name="success">/main.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="adminLogin" class="com.challen.admin.action.AdminLoginAction" method="adminLogin">
+			<result name="success">/admin/main.jsp</result>
+			<result name="input">/admin/index.jsp</result>
+		</action>
+	</package>
+	<package name="user-authority" extends="struts-default">
+		<interceptors>
+			<interceptor class="com.challen.util.AuthorityInterceptor" name="authority"/>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="authority"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault"/>
+		
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+		
+		<action name="selectinfo" class="com.challen.users.action.SelectInfoAction" method="selectInfo">
+			<result name="success">/selectinfo.jsp</result>
+			<result name="input">/showinfo.jsp</result>
+			<result name="find">/admin/selectinfo.jsp</result>
+		</action>
+		<action name="update" class="com.challen.users.action.UpdateAction" method="update">
+			<result name="success">/updatesucc.jsp</result>
+			<result name="input">/selectinfo.jsp</result>
+		</action>
+		<action name="findalluer" class="com.challen.users.action.FindAllUsersAction" method="findAllUsers">
+			<result name="success">/allusers.jsp</result>
+			<result name="input">/admin/allusers.jsp</result>
+		</action>
+		<action name="delete" class="com.challen.admin.action.DeleteUsersAction" method="delete">
+			<result name="success">/admin/succ.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action> 
+		<action name="newusers" class="com.challen.admin.action.FindNewUsersAction" method="findNewUsers">
+			<result name="success">/admin/newusers.jsp</result>
+		</action>
+		<action name="findalladmin" class="com.challen.admin.action.FindAllAdminAction" method="findAllAdmin">
+			<result name="success">/admin/alladmin.jsp</result>
+		</action>
+		<action name="findadmin" class="com.challen.admin.action.FindAdminAction" method="finAdmin">
+			<result name="success">/admin/selectadmin.jsp</result>
+		</action>
+		<action name="updateAdmin" class="com.challen.admin.action.UpdateAdminAction" method="updateAdmin">
+			<result name="success">/updatesucc.jsp</result>
+			<result name="input">/selectadmin.jsp</result>
+		</action>
+		<action name="deleteAdmin" class="com.challen.admin.action.DeleteAdminAction" method="deleteAdmin">
+			<result name="success">/succ.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="addAdmin" class="com.challen.admin.action.AddAdminAction" method="addAdmin">
+			<result name="success">/admin/succ.jsp</result>
+			<result name="input">/admin/addadmin.jsp</result>
+		</action>
+		<action name="exit" class="com.challen.users.action.ExitAction" method="exit">
+			<result name="success">/index.jsp</result>
+		</action>
+	</package>
 	<package name="struts2_login" extends="struts-default" namespace="/login">
 		<action name="checkLogin" class="act.LoginAction" method="checkLogin">
 			<result name="success">/index.jsp</result>
