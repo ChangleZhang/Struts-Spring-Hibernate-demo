@@ -1,6 +1,7 @@
 package com.challen.users.action;
 
 public class Users {
+	private int id;
 	private String username;
 	private String password;
 	private String name;
@@ -10,6 +11,14 @@ public class Users {
 	private String email;
 	private String phone;
 	private String selfshow;
+	private String tip;
+	public void setId(int id){
+		this.id = id;
+	}
+	public int getId(){
+		return id;
+	}
+	
 	public void setUsername(String username){
 		this.username = username;
 	}
@@ -71,5 +80,12 @@ public class Users {
 	}
 	public String getSelfShow(){
 		return selfshow;
+	}
+	
+	public void setTip(String tip){
+		this.tip = tip;
+	}
+	public String getTip(){
+		return tip;
 	}
 }

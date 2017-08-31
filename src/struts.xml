@@ -40,7 +40,7 @@
 			<result name="success">/updatesucc.jsp</result>
 			<result name="input">/selectinfo.jsp</result>
 		</action>
-		<action name="findalluer" class="com.challen.users.action.FindAllUsersAction" method="findAllUsers">
+		<action name="findalluser" class="com.challen.users.action.FindAllUsersAction" method="findAllUsers">
 			<result name="success">/allusers.jsp</result>
 			<result name="input">/admin/allusers.jsp</result>
 		</action>
