@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
 	<h3><s:text name="UserRegister"/></h3>
-	<s:form action="register" method="post">
+	<s:form action="register" method="post" namespace="/register">
 		<s:textfield name="username" key="UserName"/>
 		<s:password name="password" key="PassWord"/>
 		<s:textfield name="name" key="Name"/>
@@ -38,6 +38,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<s:submit key="Register"/>
 	</s:form>
-	<%@ include file="bottom.jsp"%>
   </body>
 </html>

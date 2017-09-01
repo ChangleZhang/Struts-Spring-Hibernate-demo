@@ -32,4 +32,42 @@ public class AdminDAO {
 		}
 		return flag;
 	}
+	public boolean deleteAdmin(int id){
+		boolean flag = false;
+		con=DataBaseDAO.getConnection();
+		try{
+			pt=con.prepareStatement("delete from admin where id=?");
+			pt.setInt(1, id);
+			int i=pt.executeUpdate();
+			if(i>0){
+				flag=true;
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			DataBaseDAO.closeRs(rs);
+			DataBaseDAO.closePt(pt);
+			DataBaseDAO.closeCon(con);
+		}
+		return flag;
+	}
+	public boolean deleteUsers(int id){
+		boolean flag = false;
+		con=DataBaseDAO.getConnection();
+		try{
+			pt=con.prepareStatement("delete from users where id=?");
+			pt.setInt(1, id);
+			int i=pt.executeUpdate();
+			if(i>0){
+				flag=true;
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			DataBaseDAO.closeRs(rs);
+			DataBaseDAO.closePt(pt);
+			DataBaseDAO.closeCon(con);
+		}
+		return flag;
+	}
 }
