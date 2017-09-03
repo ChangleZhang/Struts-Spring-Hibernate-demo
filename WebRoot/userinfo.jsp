@@ -27,7 +27,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    读取session中的信息，欢迎：<s:property value="#session.login"/> !<br>
    读取application中的信息，欢迎：<s:property value = "#application.login"/>!<br>
    if-else if-else的使用<br>
-   <s:set name = "dengji" value="85"/>
    <s:if test="#dengji>=90">成绩优秀</s:if>
    <s:elseif test="#dengji>=80">成绩一般</s:elseif>
    <s:else>成绩不合格</s:else>

@@ -1,0 +1,17 @@
+#MyEclipse Hibernate Properties
+#Sat Sep 02 21:26:12 GMT+08:00 2017
+genVersionTag=false
+sessionFactoryName=com.challen.hibernate.HibernateSessionFactory
+genAnnotations=false
+configFile=/hello/src/hibernate.cfg.xml
+reStrategyClass=
+sessionFactoryId=
+profile=
+detectM2M=false
+genBasicCompId=false
+keyGenerator=
+createConfigFile=true
+basePersistenceClass=
+detectO2O=false
+useJavaTypes=true
+reSettingsFile=

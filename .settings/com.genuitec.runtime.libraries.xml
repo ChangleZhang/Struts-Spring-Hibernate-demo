@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+  <add-on id="hibernate.extra"/>
+  <container path="com.genuitec.runtime.library/com.genuitec.hibernate_4.1">
+    <custom-jar path="C:lib/Program Files (x86)/MySQL/Connector.J 5.1/mysql-connector-java-5.1.40-bin.jar"/>
+  </container>
+</project>
